@@ -1,5 +1,6 @@
-#include "Time.h"
+﻿#include "Time.h"
 #include <iostream>
+#include <windows.h>    // Библиотека для русской локализации
 using namespace std;
 
 //перегрузка операции присваивани¤
@@ -57,8 +58,8 @@ Time Time::operator-(const Time& t)
 //перегрузка глобальной функции-операции ввода
 istream& operator>>(istream& in, Time& t)
 {
-	cout << "¬ведите минуты: "; in >> t.min;
-	cout << "¬ведите секунды: "; in >> t.sec;
+	cout << "Введите минуты: "; in >> t.min;
+	cout << "Введите секунды: "; in >> t.sec;
 	return in;
 }
 
