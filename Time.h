@@ -1,5 +1,5 @@
 #pragma once
-//описание класса
+//РѕРїРёСЃР°РЅРёРµ РєР»Р°СЃСЃР°
 #include <iostream>
 using namespace std;
 class Time
@@ -8,21 +8,21 @@ class Time
 public:
 	Time() { min = 0; sec = 0; };
 	Time(int m, int s) { min = m; sec = s; }
-	Time(int s) { min = 0; sec = s; } // Конструктор для секунд
+	Time(int s) { min = 0; sec = s; } // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ СЃРµРєСѓРЅРґ
 	Time(const Time& t) { min = t.min; sec = t.sec; }
-	~Time() {}; // Деструктор
-	void clear() { sec = 0;  }; // Метод почистит секунды, для дальнейшей обработки 
+	~Time() {}; // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
+	void clear() { sec = 0;  }; // РњРµС‚РѕРґ РїРѕС‡РёСЃС‚РёС‚ СЃРµРєСѓРЅРґС‹, РґР»СЏ РґР°Р»СЊРЅРµР№С€РµР№ РѕР±СЂР°Р±РѕС‚РєРё 
 	int get_min() { return min; }
 	int get_sec() { return sec; }
 	void set_min(int m) { min = m; }
 	void set_sec(int s) { sec = s; }
-	//перегруженные операции
+	//РїРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ РѕРїРµСЂР°С†РёРё
 	Time& operator=(const Time&);
 	Time& operator++();
-	Time operator++(int);//постфиксная операция
+	Time operator++(int);//РїРѕСЃС‚С„РёРєСЃРЅР°СЏ РѕРїРµСЂР°С†РёСЏ
 	Time operator+(const Time&);
-	Time operator-(const Time&); // Операция вычитания
-	//глобальные функции ввода-вывода
+	Time operator-(const Time&); // РћРїРµСЂР°С†РёСЏ РІС‹С‡РёС‚Р°РЅРёСЏ
+	//РіР»РѕР±Р°Р»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё РІРІРѕРґР°-РІС‹РІРѕРґР°
 	friend istream& operator>>(istream& in, Time& t);
 	friend ostream& operator<<(ostream& out, const Time& t);
 };
