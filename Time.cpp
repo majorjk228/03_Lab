@@ -1,9 +1,7 @@
 #include "Time.h"
 #include <iostream>
-#include <windows.h>    // Библиотека для русской локализации
-
-
 using namespace std;
+
 //перегрузка операции присваивания
 Time& Time::operator=(const Time& t)
 {
@@ -59,9 +57,6 @@ Time Time::operator-(const Time& t)
 //перегрузка глобальной функции-операции ввода
 istream& operator>>(istream& in, Time& t)
 {
-	SetConsoleCP(1251);         // Ввод с консоли в кодировке 1251 для русской локализации.
-	SetConsoleOutputCP(1251);   // Вывод на консоль в кодировке 1251 для русской локализации.
-
 	cout << "Введите минуты: "; in >> t.min;
 	cout << "Введите секунды: "; in >> t.sec;
 	return in;
