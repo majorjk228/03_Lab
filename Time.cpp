@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 //перегрузка операции присваивания
-Time& Time::operator=(const Time& t)
+Time& Time::operator=(const Time& t
 {
 	//проверка на самоприсваивание
 	if (&t == this) return *this;
